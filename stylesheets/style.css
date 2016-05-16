@@ -1,0 +1,28 @@
+body {
+  padding-top: 100px;
+}
+
+.input-group {
+  padding-top: 200px;
+}
+
+.date {
+  text-align: right;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.row {
+  position: relative;
+}
+
+.ng-enter {
+  animation: fadeInRight .5s;
+}
+
+.ng-leave {
+  animation: fadeOutLeft .5s;
+}

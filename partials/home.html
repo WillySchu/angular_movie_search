@@ -1,0 +1,51 @@
+<div class='row'>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="input-group">
+      <input ng-model='main.q' type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button ng-click='main.search()' class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+      <div class='radio'>
+        <label>
+          <input type="radio" name='type' ng-model='main.type' value='movie'>
+        </label>Movie
+      </div>
+      <div class=radio>
+        <label>
+          <input type="radio" name="type" ng-model='main.type' value="series">
+        </label>Series
+      </div>
+      <div class='radio'>
+        <label>
+          <input type="radio" name="type" ng-model='main.type' value="episode">
+        </label>Episode
+      </div>
+    <div ng-if='main.results' class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <table class='table table-condensed'>
+          <tr>
+            <th>
+              Movies:
+            </th>
+          </tr>
+          <tr ng-repeat='result in main.results'>
+            <td>
+              <img src="{{result.Poster}}" alt="">
+            </td>
+            <td>
+              <a href='#' ng-click='main.movie(result.imdbID, check)'>{{ result.Title }}</a>
+            </td>
+            <td>
+              <div class='checkbox'>
+                <label>
+                  <input type="checkbox" value='true' ng-model='check'>
+                </label>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
